@@ -91,6 +91,7 @@ def input_sponsoren(number_of_pieces):
     print('Bitte geben Sie die Sponsoren im Format [Name, Betrag, Stücknummer] ein.')
     print('Wenn Sie fertig sind, scheiben Sie "Eingabe ende"')
     print('Sollte ein Sponsor schon einmal existieren, wird er nicht hinzugefügt (Alle Werte identisch)')
+    print(f'Aktuell gibt es {number_of_pieces} Stücke zur Auswahl, oder 0 sollte kein Wunsch gegeben sein')
     sponsoren = set()
     while(True):
         str_in = input(" > ").lower()
@@ -102,4 +103,32 @@ def input_sponsoren(number_of_pieces):
             sponsoren.add(str_in)
     return sponsoren
 
-get_sponsors_list(6)
+
+def get_number_of_pieces(music_file):
+    pass
+
+def menu():
+    while(True):
+        print('Wählen aus:')
+        print('[1] Programmliste auswählen/erstellen')
+        print('[2] Sponsorenliste auswählen/erstellen')
+        print('[3] Sponsoren zuordnen')
+        print('[4] Ende')
+
+        choice = int(input(' > '))
+        music_file = ""
+        sponsors_file = ""
+        number_of_pieces = 0
+        if choice == 1:
+            music_file = get_music_list()
+            number_of_pieces = get_number_of_pieces(music_file)
+        
+        elif choice == 2:
+            sponsors_file = get_sponsors_list(number_of_pieces)
+        
+
+def __main__():
+
+    get_sponsors_list(6)
+
+__main__()
